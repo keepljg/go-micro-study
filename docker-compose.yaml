@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  search-api:
+    build: ./api/search-api
+    ports:
+      - 50051:50051
+    environment:
+      MICRO_ADRESS: ":50051"
+
+  email-srv:
+    build: ./srv/email
+    ports:
+      - 50052:50051
+    environment:
+      MICRO_ADRESS: ":50051"
+
+
+  fileinfo-srv:
+    build: ./srv/fileinfo-srv
+    ports:
+      - 50053:50051
+    environment:
+      MICRO_ADRESS: ":50051"
+
+  search-srv:
+    build: ./srv/search
+    ports:
+      - 50054:50051
+    environment:
+      MICRO_ADRESS: ":50051"
+
+
+  beego-web:
+    build: ./web/beego-web
+    ports:
+      - 50055:50051
+    environment:
+      MICRO_ADRESS: ":50051"

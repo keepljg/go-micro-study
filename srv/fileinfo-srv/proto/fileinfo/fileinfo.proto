@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package go.micro.srv.fileinfo;
+
+service FileInfo {
+    rpc GetAppInfoByEntityId(Request) returns (Response) {}
+}
+
+
+message EntityId {
+	string entityId = 1;
+}
+
+message Request {
+    repeated EntityId  entityIds = 1;
+}
+
+
+message AppInfo {
+    string name = 1;
+    string iconUrl = 2;
+    repeated string screens = 3;
+    string downloadUrl = 4;
+}
+
+
+message Response {
+    repeated AppInfo appInfos = 1;
+}
+

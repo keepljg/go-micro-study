@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package go.micro.api.search;
+
+import "github.com/micro/go-api/proto/api.proto";
+
+
+
+service SearchEr {
+    rpc SearchList(go.api.Request) returns (go.api.Response) {};
+}
+

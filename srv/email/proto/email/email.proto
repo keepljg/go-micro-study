@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package go.micro.srv.email;
+
+
+service Email {
+    rpc SendEmail(Request) returns (Response) {}
+}
+
+
+message Message {
+	string message = 1;
+}
+
+
+message Request {
+	Message message = 1;
+}
+
+message Response {
+	int64 success = 1;
+}
